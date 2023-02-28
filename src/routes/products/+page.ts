@@ -1,10 +1,10 @@
-export const load = async (loadEvent: any) => {
-    const { fetch } = loadEvent;
-    const title = "List of available products";
-    const response = await fetch("http://localhost:4000/products");
-    const products = await response.json();
+import Product from './product.svelte';
 
-    return {
-        title, products
-    }
-}
+export const load = async ({ 
+    data // This comes from the return data of page.server.ts
+}) => {
+    console.log('universal load function called');
+    const notification = 'End of season sale!';
+    // Universal load function can return component, wbile server load function can't do that
+    return { ...data, notification, Component: Product };
+};
