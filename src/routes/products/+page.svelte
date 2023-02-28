@@ -1,6 +1,12 @@
-<a href="/">Home</a>
+<script>
+	export let data;
+	const title = data.title;
+	const products = data.products;
+	const Component = data.Component;
+</script>
 
-<h1>Product List</h1>
-<h2><a href="/products/1">Product 1</a></h2>
-<h2><a href="/products/2">Product 2</a></h2>
-<h2><a href="/products/3">Product 3</a></h2>
+<h1>{title} for username</h1>
+
+{#each products as product}
+	<Component {product} />
+{/each}
