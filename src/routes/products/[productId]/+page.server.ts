@@ -1,9 +1,9 @@
-import { error } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 
 export const load = async ({ fetch, params }) => {
     const { productId } = params;
     if (productId > 3) {
-        throw error(404, { message: 'Product not found' });
+        throw redirect(307, '/products');
     }
     const title = 'Product details';
     const notification = 'End of season sale! 60% off!';
