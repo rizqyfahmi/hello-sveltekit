@@ -2,7 +2,8 @@
     import { goto } from "$app/navigation";
 
     const onClick = () => {
-        goto("/products")
+        // replaceState is used to replace the current history state instead of adding a new url on the stack
+        goto("/products", { replaceState: true })
     }
 </script>
 
