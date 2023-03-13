@@ -3,13 +3,9 @@ export const load = async ({ fetch }) => {
     const topGainingStockResponse = await fetch("http://localhost:4000/top-gaining-stock");
     const topLosingStockResponse = await fetch("http://localhost:4000/top-losing-stock");
 
-    const mostActiveStock = await mostActiveStockResponse.json()
-    const topGainingStock = await topGainingStockResponse.json()
-    const topLosingStock = await topLosingStockResponse.json()
-
     return {
-        mostActiveStock,
-        topGainingStock,
-        topLosingStock
+        mostActiveStock: mostActiveStockResponse.json(),
+        topGainingStock: topGainingStockResponse.json(),
+        topLosingStock: topLosingStockResponse.json()
     }
 }
