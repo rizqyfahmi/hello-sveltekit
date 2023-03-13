@@ -1,10 +1,26 @@
+<script lang="ts">
+    export let data;
+    
+    const title = data.title;
+    const featuredProducts = data.featuredProducts;
+</script>
+
 <slot />
-<div class="layout-product">Product Featured</div>
+<h2>{ title }</h2>
+
+{#each featuredProducts as product}
+    <div class="product-item">
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+    </div>    
+{/each}
 
 <style>
-    .layout-product {
-        color: #BFDCE5;
-        font-size: 16px;
-        font-weight: bold;
+    .product-item {
+        display: inline-block;
+        width: 200px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
     }
 </style>
