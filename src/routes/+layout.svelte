@@ -1,10 +1,7 @@
+<script lang="ts">
+    export let data;
 
+    const { username } = data;
+</script>
+<div>Welcome, { username }</div>
 <slot />
-<div class="layout-footer">Footer</div>
-
-<style>
-    .layout-footer {
-        background-color: #4D455D;
-        padding: 12px;
-    }
-</style>
