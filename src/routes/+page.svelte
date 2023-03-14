@@ -1,4 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
+<h1 class="tall">Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<!-- As the default when we click the link below, sveltekit will make it move page without refresh but "data-sveltekit-reload" we can make it refresh page when we click link below  -->
-<a href="/products" data-sveltekit-reload>Products</a>
+<!-- As the default when we click the link below, in the next page will scroll to the top. Using "data-sveltekit-noscroll", We can prevent it -->
+<a href="/products" data-sveltekit-noscroll>Products</a>
+
+<style>
+    .tall {
+        height: 100vh;
+    }
+</style>
