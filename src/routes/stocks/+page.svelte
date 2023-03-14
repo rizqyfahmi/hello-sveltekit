@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { invalidate } from '$app/navigation';
+	import { invalidateAll } from '$app/navigation';
 
     export let data;
     
     const refresh = () => {
-        // Make sure label you pass here is equals to label you pass in load function
-        invalidate("stocks:actively-trading")
+        // Invalidate all changed data in exposed components
+        invalidateAll()
     }
 </script>
 
