@@ -4,8 +4,8 @@
     export let data;
     
     const refresh = () => {
-        // Make sure URL you pass here is equals to URL you pass in load function
-        invalidate("http://localhost:4000/stocks")
+        // Make sure label you pass here is equals to label you pass in load function
+        invalidate("stocks:actively-trading")
     }
 </script>
 
