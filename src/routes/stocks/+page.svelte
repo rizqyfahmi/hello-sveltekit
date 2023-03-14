@@ -1,14 +1,18 @@
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
+
     export let data;
+    
+    const refresh = () => {
+        // Make sure URL you pass here is equals to URL you pass in load function
+        invalidate("http://localhost:4000/stocks")
+    }
 </script>
 
-<span>Most active stock - {data.mostActiveStock.symbol}</span>
-<span>Top gaining stock - {data.topGainingStock.symbol}</span>
-<span>Top losing stock - {data.topLosingStock.symbol}</span>
+<h1>Actively trading stocks</h1>
 
-<style>
-    span {
-        margin-right: 30px;
-        font-size: 24px;
-    }
-</style>
+{#each data.stocks as stock}
+    <h2>{ stock.symbol } - ${ stock.price }</h2>
+{/each}
+
+<button on:click={refresh}>Refresh</button>
