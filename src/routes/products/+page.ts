@@ -8,3 +8,6 @@ export const load = async ({
     // Universal load function can return component, wbile server load function can't do that
     return { ...data, notification, Component: Product };
 };
+
+export const ssr = true;
+export const csr = true;
