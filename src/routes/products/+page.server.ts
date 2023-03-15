@@ -5,3 +5,5 @@ export const load = async ({ fetch }) => {
     const products = await response.json();
     return { title, products };
 };
+
+export const prerender = true;
