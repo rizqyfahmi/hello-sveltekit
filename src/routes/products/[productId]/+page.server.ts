@@ -12,4 +12,4 @@ export const load = async ({ fetch, params }) => {
     return { title, notification, product };
 };
 
-export const prerender = 'auto';
+export const prerender = true;
