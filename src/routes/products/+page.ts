@@ -9,5 +9,5 @@ export const load = async ({
     return { ...data, notification, Component: Product };
 };
 
-export const ssr = true;
+export const ssr = false;
 export const csr = true;
